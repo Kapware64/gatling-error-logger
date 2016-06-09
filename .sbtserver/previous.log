@@ -1,4 +1,28 @@
-New log file opened at Thu Jun 09 12:21:04 EDT 2016 by 94007@Noahs-MacBook-Pro.local
+New log file opened at Thu Jun 09 14:53:32 EDT 2016 by 95730@Noahs-MacBook-Pro.local
+Read from stdout: Resolving org.mockito#mockito-core;1.9.5 ...
+Resolving org.mockito#mockito-core;1.9.5 ...
+sbt-chain: Checking cache for: dependency: org.mockito#mockito-core;1.9.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+sbt-chain: module revision found in cache: org.mockito#mockito-core;1.9.5
+	found org.mockito#mockito-core;1.9.5 in sbt-chain
+== resolving dependencies org.specs2#specs2-mock_2.11;3.6.6->org.mockito#mockito-core;1.9.5 [compile->compile(*)]
+== resolving dependencies org.mockito#mockito-core;1.9.5->org.hamcrest#hamcrest-core;1.1 [compile->master(compile)]
+== resolving dependencies org.mockito#mockito-core;1.9.5->org.hamcrest#hamcrest-core;1.3 [compile->master(compile)]
+== resolving dependencies org.mockito#mockito-core;1.9.5->org.hamcrest#hamcrest-core;1.1 [compile->compile(*)]
+== resolving dependencies org.mockito#mockito-core;1.9.5->org.hamcrest#hamcrest-core;1.3 [compile->compile(*)]
+== resolving dependencies org.mockito#mockito-core;1.9.5->org.objenesis#objenesis;1.0 [compile->master(compile)]
+Read from stdout: Resolving org.objenesis#objenesis;1.0 ...
+Resolving org.objenesis#objenesis;1.0 ...
+sbt-chain: Checking cache for: dependency: org.objenesis#objenesis;1.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+sbt-chain: module revision found in cache: org.objenesis#objenesis;1.0
+	found org.objenesis#objenesis;1.0 in sbt-chain
+== resolving dependencies org.mockito#mockito-core;1.9.5->org.objenesis#objenesis;1.0 [compile->compile(*)]
+== resolving dependencies com.typesafe.play#play-specs2_2.11;2.5.3->org.specs2#specs2-mock_2.11;3.6.6 [compile->runtime(*)]
+== resolving dependencies com.typesafe.play#play-specs2_2.11;2.5.3->org.specs2#specs2-mock_2.11;3.6.6 [compile->compile]
+== resolving dependencies org.specs2#specs2-mock_2.11;3.6.6->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
+== resolving dependencies org.specs2#specs2-mock_2.11;3.6.6->org.scala-lang#scala-library;2.11.7 [runtime->compile]
+== resolving dependencies org.specs2#specs2-mock_2.11;3.6.6->org.specs2#specs2-core_2.11;3.6.6 [runtime->runtime(*)]
+== resolving dependencies org.specs2#specs2-mock_2.11;3.6.6->org.specs2#specs2-core_2.11;3.6.6 [runtime->compile]
+== resolving dependencies org.specs2#specs2-mock_2.11;3.6.6->org.hamcrest#hamcrest-core;1.3 [runtime->runtime(*)]
 == resolving dependencies org.specs2#specs2-mock_2.11;3.6.6->org.hamcrest#hamcrest-core;1.3 [runtime->compile]
 == resolving dependencies org.specs2#specs2-mock_2.11;3.6.6->org.mockito#mockito-core;1.9.5 [runtime->runtime(*)]
 == resolving dependencies org.specs2#specs2-mock_2.11;3.6.6->org.mockito#mockito-core;1.9.5 [runtime->compile]
@@ -3731,7 +3755,7 @@ sbt-chain: module revision found in cache: net.contentobjects.jnotify#jnotify;0.
 	[NOT REQUIRED] org.scala-sbt#control_2.11;0.13.8-M3!control_2.11.jar
 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.jar
 	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.jar
-:: resolution report :: resolve 7385ms :: artifacts dl 216ms
+:: resolution report :: resolve 5951ms :: artifacts dl 201ms
 	report for play-scala-intro#play-scala-intro_2.11;1.0-SNAPSHOT compile produced in /Users/NoahKaplan/Desktop/play-scala-intro/target/resolution-cache/reports/play-scala-intro-play-scala-intro_2.11-compile.xml
 	report for play-scala-intro#play-scala-intro_2.11;1.0-SNAPSHOT runtime produced in /Users/NoahKaplan/Desktop/play-scala-intro/target/resolution-cache/reports/play-scala-intro-play-scala-intro_2.11-runtime.xml
 	report for play-scala-intro#play-scala-intro_2.11;1.0-SNAPSHOT test produced in /Users/NoahKaplan/Desktop/play-scala-intro/target/resolution-cache/reports/play-scala-intro-play-scala-intro_2.11-test.xml
@@ -3746,46 +3770,52 @@ sbt-chain: module revision found in cache: net.contentobjects.jnotify#jnotify;0.
 	report for play-scala-intro#play-scala-intro_2.11;1.0-SNAPSHOT pom produced in /Users/NoahKaplan/Desktop/play-scala-intro/target/resolution-cache/reports/play-scala-intro-play-scala-intro_2.11-pom.xml
 	report for play-scala-intro#play-scala-intro_2.11;1.0-SNAPSHOT scala-tool produced in /Users/NoahKaplan/Desktop/play-scala-intro/target/resolution-cache/reports/play-scala-intro-play-scala-intro_2.11-scala-tool.xml
 	report for play-scala-intro#play-scala-intro_2.11;1.0-SNAPSHOT fork-run produced in /Users/NoahKaplan/Desktop/play-scala-intro/target/resolution-cache/reports/play-scala-intro-play-scala-intro_2.11-fork-run.xml
-	resolve done (7385ms resolve - 216ms download)
+	resolve done (5951ms resolve - 201ms download)
 Read from stdout: Done updating.
 Done updating.
-Total time: 8 s, completed Jun 9, 2016 12:21:08 PM
+Total time: 7 s, completed Jun 9, 2016 2:53:35 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > root/playForkNotifyStart http://localhost:9000
 Evaluating tasks: *:playForkNotifyStart
-Running task... Cancel: sbt.server.ServerTaskCancellation@47715ce2, check cycles: false
-Total time: 0 s, completed Jun 9, 2016 12:21:11 PM
+Running task... Cancel: sbt.server.ServerTaskCancellation@3a13a8b9, check cycles: false
+Total time: 0 s, completed Jun 9, 2016 2:53:38 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/NoahKaplan/Desktop/play-scala-intro/}root/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@3cb0a1e4, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@6f42ab9e, check cycles: false
+SLF4J: The following set of substitute loggers may have been accessed
+SLF4J: during the initialization phase. Logging calls during this
+SLF4J: phase were not honored. However, subsequent logging calls to these
+SLF4J: loggers will work as normally expected.
+SLF4J: See also http://www.slf4j.org/codes.html#substituteLogger
+SLF4J: org.webjars.CloseQuietly
 
 Initial source changes: 
 	removed:Set()
 	added: Set()
-	modified: Set(/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala)
+	modified: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
 Removed products: Set()
 External API changes: API Changes: Set()
 Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala)
+Initial directly invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
 
 Sources indirectly invalidated by:
 	product: Set()
 	binary dep: Set()
 	external source: Set()
-All initially invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala)
+All initially invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
 
-Read from stdout: Compiling 1 Scala source to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
-Compiling 1 Scala source to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
+Read from stdout: Compiling 3 Scala sources to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
+Compiling 3 Scala sources to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
 Getting compiler-interface from component compiler for Scala 2.11.7
 Other repositories:
 Default repositories:
 Getting compiler-interface from component compiler for Scala 2.11.7
 Other repositories:
 Default repositories:
-Running cached compiler 6d052f44, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Running cached compiler 56066cd2, interfacing (CompilerInterface) with Scala compiler version 2.11.7
 Calling Scala compiler with arguments  (CompilerInterface):
 	-deprecation
 	-unchecked
@@ -3795,12 +3825,226 @@ Calling Scala compiler with arguments  (CompilerInterface):
 	/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/classes:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar
 	-classpath
 	/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.play/twirl-api_2.11/1.1.1/jars/twirl-api_2.11.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.apache.commons/commons-lang3/3.4/jars/commons-lang3.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe/config/1.3.0/bundles/config.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/joda-time/joda-time/2.9.2/jars/joda-time.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.joda/joda-convert/1.8.1/jars/joda-convert.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang/scala-reflect/2.11.7/jars/scala-reflect.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-core/2.7.1/bundles/jackson-core.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-annotations/2.7.1/bundles/jackson-annotations.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-databind/2.7.1/bundles/jackson-databind.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.7.1/bundles/jackson-datatype-jdk8.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.7.1/bundles/jackson-datatype-jsr310.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/slf4j-api/1.7.16/jars/slf4j-api.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/jul-to-slf4j/1.7.16/jars/jul-to-slf4j.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/jcl-over-slf4j/1.7.16/jars/jcl-over-slf4j.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-streams_2.11/jars/play-streams_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.reactivestreams/reactive-streams/1.0.0/jars/reactive-streams.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-stream_2.11/jars/akka-stream_2.11-2.4.4.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.4.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang.modules/scala-java8-compat_2.11/0.7.0/bundles/scala-java8-compat_2.11.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe/ssl-config-akka_2.11/bundles/ssl-config-akka_2.11-0.2.1.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe/ssl-config-core_2.11/bundles/ssl-config-core_2.11-0.2.1.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.4.4.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/commons-codec/commons-codec/1.10/jars/commons-codec.jar:/Users/NoahKaplan/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/NoahKaplan/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/NoahKaplan/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.google.inject/guice/4.0/jars/guice.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/javax.inject/javax.inject/1/jars/javax.inject.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/aopalliance/aopalliance/1.0/jars/aopalliance.jar:/Users/NoahKaplan/.ivy2/cache/com.google.guava/guava/bundles/guava-16.0.1.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.google.inject.extensions/guice-assistedinject/4.0/jars/guice-assistedinject.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.netty/netty-reactive-streams-http/1.0.5/jars/netty-reactive-streams-http.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.netty/netty-reactive-streams/1.0.5/jars/netty-reactive-streams.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-handler/4.0.34.Final/jars/netty-handler.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-codec/4.0.34.Final/jars/netty-codec.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-codec-http/4.0.34.Final/jars/netty-codec-http.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-transport-native-epoll/4.0.36.Final/jars/netty-transport-native-epoll-linux-x86_64.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-common/4.0.36.Final/jars/netty-common.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-buffer/4.0.36.Final/jars/netty-buffer.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-transport/4.0.36.Final/jars/netty-transport.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-logback_2.11/jars/play-logback_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/ch.qos.logback/logback-core/1.1.4/jars/logback-core.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/ch.qos.logback/logback-classic/1.1.4/jars/logback-classic.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-slick_2.11/jars/play-slick_2.11-2.0.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.slick/slick_2.11/bundles/slick_2.11-3.1.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.slick/slick-hikaricp_2.11/bundles/slick-hikaricp_2.11-3.1.0.jar:/Users/NoahKaplan/.ivy2/cache/com.zaxxer/HikariCP-java6/bundles/HikariCP-java6-2.3.7.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.javassist/javassist/3.19.0-GA/bundles/javassist.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.5.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-slick-evolutions_2.11/jars/play-slick-evolutions_2.11-2.0.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.11/jars/play-jdbc-evolutions_2.11-2.5.0.jar:/Users/NoahKaplan/.ivy2/cache/com.h2database/h2/jars/h2-1.4.190.jar
-Scala compilation took 6.12857512 s
+Read from stdout: /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala:76: missing arguments for method apply in class index;
+Read from stdout: follow this method with `_' if you want to treat it as a partially applied function
+/Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala:76: missing arguments for method apply in class index;
+follow this method with `_' if you want to treat it as a partially applied function
+Read from stdout: Future.successful(Ok(views.html.index(errorForm)))
+        Future.successful(Ok(views.html.index(errorForm)))
+Read from stdout: ^
+                                             ^
+Read from stdout: one error found
+one error found
+Compilation failed (CompilerInterface)
+Total time: 8 s, completed Jun 9, 2016 2:53:54 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/Users/NoahKaplan/Desktop/play-scala-intro/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@1f261332, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+
+Read from stdout: Compiling 3 Scala sources to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
+Compiling 3 Scala sources to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Running cached compiler 2e6958d1, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Calling Scala compiler with arguments  (CompilerInterface):
+	-deprecation
+	-unchecked
+	-encoding
+	utf8
+	-bootclasspath
+	/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/classes:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar
+	-classpath
+	/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.play/twirl-api_2.11/1.1.1/jars/twirl-api_2.11.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.apache.commons/commons-lang3/3.4/jars/commons-lang3.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe/config/1.3.0/bundles/config.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/joda-time/joda-time/2.9.2/jars/joda-time.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.joda/joda-convert/1.8.1/jars/joda-convert.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang/scala-reflect/2.11.7/jars/scala-reflect.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-core/2.7.1/bundles/jackson-core.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-annotations/2.7.1/bundles/jackson-annotations.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-databind/2.7.1/bundles/jackson-databind.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.7.1/bundles/jackson-datatype-jdk8.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.7.1/bundles/jackson-datatype-jsr310.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/slf4j-api/1.7.16/jars/slf4j-api.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/jul-to-slf4j/1.7.16/jars/jul-to-slf4j.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/jcl-over-slf4j/1.7.16/jars/jcl-over-slf4j.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-streams_2.11/jars/play-streams_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.reactivestreams/reactive-streams/1.0.0/jars/reactive-streams.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-stream_2.11/jars/akka-stream_2.11-2.4.4.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.4.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang.modules/scala-java8-compat_2.11/0.7.0/bundles/scala-java8-compat_2.11.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe/ssl-config-akka_2.11/bundles/ssl-config-akka_2.11-0.2.1.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe/ssl-config-core_2.11/bundles/ssl-config-core_2.11-0.2.1.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.4.4.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/commons-codec/commons-codec/1.10/jars/commons-codec.jar:/Users/NoahKaplan/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/NoahKaplan/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/NoahKaplan/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.google.inject/guice/4.0/jars/guice.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/javax.inject/javax.inject/1/jars/javax.inject.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/aopalliance/aopalliance/1.0/jars/aopalliance.jar:/Users/NoahKaplan/.ivy2/cache/com.google.guava/guava/bundles/guava-16.0.1.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.google.inject.extensions/guice-assistedinject/4.0/jars/guice-assistedinject.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.netty/netty-reactive-streams-http/1.0.5/jars/netty-reactive-streams-http.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.netty/netty-reactive-streams/1.0.5/jars/netty-reactive-streams.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-handler/4.0.34.Final/jars/netty-handler.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-codec/4.0.34.Final/jars/netty-codec.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-codec-http/4.0.34.Final/jars/netty-codec-http.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-transport-native-epoll/4.0.36.Final/jars/netty-transport-native-epoll-linux-x86_64.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-common/4.0.36.Final/jars/netty-common.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-buffer/4.0.36.Final/jars/netty-buffer.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-transport/4.0.36.Final/jars/netty-transport.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-logback_2.11/jars/play-logback_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/ch.qos.logback/logback-core/1.1.4/jars/logback-core.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/ch.qos.logback/logback-classic/1.1.4/jars/logback-classic.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-slick_2.11/jars/play-slick_2.11-2.0.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.slick/slick_2.11/bundles/slick_2.11-3.1.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.slick/slick-hikaricp_2.11/bundles/slick-hikaricp_2.11-3.1.0.jar:/Users/NoahKaplan/.ivy2/cache/com.zaxxer/HikariCP-java6/bundles/HikariCP-java6-2.3.7.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.javassist/javassist/3.19.0-GA/bundles/javassist.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.5.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-slick-evolutions_2.11/jars/play-slick-evolutions_2.11-2.0.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.11/jars/play-jdbc-evolutions_2.11-2.5.0.jar:/Users/NoahKaplan/.ivy2/cache/com.h2database/h2/jars/h2-1.4.190.jar
+Read from stdout: /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala:76: missing arguments for method apply in class index;
+Read from stdout: follow this method with `_' if you want to treat it as a partially applied function
+/Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala:76: missing arguments for method apply in class index;
+follow this method with `_' if you want to treat it as a partially applied function
+Read from stdout: Future.successful(Ok(views.html.index(errorForm)))
+        Future.successful(Ok(views.html.index(errorForm)))
+Read from stdout: ^
+                                             ^
+Read from stdout: one error found
+one error found
+Compilation failed (CompilerInterface)
+Total time: 3 s, completed Jun 9, 2016 2:53:57 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/Users/NoahKaplan/Desktop/play-scala-intro/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@7fe5122b, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+
+Read from stdout: Compiling 3 Scala sources to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
+Compiling 3 Scala sources to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Running cached compiler 39f80f78, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Calling Scala compiler with arguments  (CompilerInterface):
+	-deprecation
+	-unchecked
+	-encoding
+	utf8
+	-bootclasspath
+	/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/classes:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar
+	-classpath
+	/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.play/twirl-api_2.11/1.1.1/jars/twirl-api_2.11.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.apache.commons/commons-lang3/3.4/jars/commons-lang3.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe/config/1.3.0/bundles/config.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/joda-time/joda-time/2.9.2/jars/joda-time.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.joda/joda-convert/1.8.1/jars/joda-convert.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang/scala-reflect/2.11.7/jars/scala-reflect.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-core/2.7.1/bundles/jackson-core.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-annotations/2.7.1/bundles/jackson-annotations.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-databind/2.7.1/bundles/jackson-databind.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.7.1/bundles/jackson-datatype-jdk8.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.7.1/bundles/jackson-datatype-jsr310.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/slf4j-api/1.7.16/jars/slf4j-api.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/jul-to-slf4j/1.7.16/jars/jul-to-slf4j.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/jcl-over-slf4j/1.7.16/jars/jcl-over-slf4j.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-streams_2.11/jars/play-streams_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.reactivestreams/reactive-streams/1.0.0/jars/reactive-streams.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-stream_2.11/jars/akka-stream_2.11-2.4.4.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.4.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang.modules/scala-java8-compat_2.11/0.7.0/bundles/scala-java8-compat_2.11.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe/ssl-config-akka_2.11/bundles/ssl-config-akka_2.11-0.2.1.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe/ssl-config-core_2.11/bundles/ssl-config-core_2.11-0.2.1.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.4.4.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/commons-codec/commons-codec/1.10/jars/commons-codec.jar:/Users/NoahKaplan/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/NoahKaplan/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/NoahKaplan/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.google.inject/guice/4.0/jars/guice.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/javax.inject/javax.inject/1/jars/javax.inject.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/aopalliance/aopalliance/1.0/jars/aopalliance.jar:/Users/NoahKaplan/.ivy2/cache/com.google.guava/guava/bundles/guava-16.0.1.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.google.inject.extensions/guice-assistedinject/4.0/jars/guice-assistedinject.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.netty/netty-reactive-streams-http/1.0.5/jars/netty-reactive-streams-http.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.netty/netty-reactive-streams/1.0.5/jars/netty-reactive-streams.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-handler/4.0.34.Final/jars/netty-handler.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-codec/4.0.34.Final/jars/netty-codec.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-codec-http/4.0.34.Final/jars/netty-codec-http.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-transport-native-epoll/4.0.36.Final/jars/netty-transport-native-epoll-linux-x86_64.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-common/4.0.36.Final/jars/netty-common.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-buffer/4.0.36.Final/jars/netty-buffer.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-transport/4.0.36.Final/jars/netty-transport.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-logback_2.11/jars/play-logback_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/ch.qos.logback/logback-core/1.1.4/jars/logback-core.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/ch.qos.logback/logback-classic/1.1.4/jars/logback-classic.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-slick_2.11/jars/play-slick_2.11-2.0.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.slick/slick_2.11/bundles/slick_2.11-3.1.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.slick/slick-hikaricp_2.11/bundles/slick-hikaricp_2.11-3.1.0.jar:/Users/NoahKaplan/.ivy2/cache/com.zaxxer/HikariCP-java6/bundles/HikariCP-java6-2.3.7.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.javassist/javassist/3.19.0-GA/bundles/javassist.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.5.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-slick-evolutions_2.11/jars/play-slick-evolutions_2.11-2.0.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.11/jars/play-jdbc-evolutions_2.11-2.5.0.jar:/Users/NoahKaplan/.ivy2/cache/com.h2database/h2/jars/h2-1.4.190.jar
+Read from stdout: /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala:76: missing arguments for method apply in class index;
+Read from stdout: follow this method with `_' if you want to treat it as a partially applied function
+/Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala:76: missing arguments for method apply in class index;
+follow this method with `_' if you want to treat it as a partially applied function
+Read from stdout: Future.successful(Ok(views.html.index(errorForm)))
+        Future.successful(Ok(views.html.index(errorForm)))
+Read from stdout: ^
+                                             ^
+Read from stdout: one error found
+one error found
+Compilation failed (CompilerInterface)
+Total time: 3 s, completed Jun 9, 2016 2:54:00 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/Users/NoahKaplan/Desktop/play-scala-intro/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@79f409d9, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+
+Read from stdout: Compiling 3 Scala sources to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
+Compiling 3 Scala sources to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Running cached compiler 3957910f, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Calling Scala compiler with arguments  (CompilerInterface):
+	-deprecation
+	-unchecked
+	-encoding
+	utf8
+	-bootclasspath
+	/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/classes:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar
+	-classpath
+	/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.play/twirl-api_2.11/1.1.1/jars/twirl-api_2.11.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.apache.commons/commons-lang3/3.4/jars/commons-lang3.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe/config/1.3.0/bundles/config.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/joda-time/joda-time/2.9.2/jars/joda-time.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.joda/joda-convert/1.8.1/jars/joda-convert.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang/scala-reflect/2.11.7/jars/scala-reflect.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-core/2.7.1/bundles/jackson-core.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-annotations/2.7.1/bundles/jackson-annotations.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-databind/2.7.1/bundles/jackson-databind.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.7.1/bundles/jackson-datatype-jdk8.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.7.1/bundles/jackson-datatype-jsr310.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/slf4j-api/1.7.16/jars/slf4j-api.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/jul-to-slf4j/1.7.16/jars/jul-to-slf4j.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/jcl-over-slf4j/1.7.16/jars/jcl-over-slf4j.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-streams_2.11/jars/play-streams_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.reactivestreams/reactive-streams/1.0.0/jars/reactive-streams.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-stream_2.11/jars/akka-stream_2.11-2.4.4.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.4.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang.modules/scala-java8-compat_2.11/0.7.0/bundles/scala-java8-compat_2.11.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe/ssl-config-akka_2.11/bundles/ssl-config-akka_2.11-0.2.1.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe/ssl-config-core_2.11/bundles/ssl-config-core_2.11-0.2.1.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.4.4.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/commons-codec/commons-codec/1.10/jars/commons-codec.jar:/Users/NoahKaplan/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/NoahKaplan/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/NoahKaplan/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.google.inject/guice/4.0/jars/guice.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/javax.inject/javax.inject/1/jars/javax.inject.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/aopalliance/aopalliance/1.0/jars/aopalliance.jar:/Users/NoahKaplan/.ivy2/cache/com.google.guava/guava/bundles/guava-16.0.1.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.google.inject.extensions/guice-assistedinject/4.0/jars/guice-assistedinject.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.netty/netty-reactive-streams-http/1.0.5/jars/netty-reactive-streams-http.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.netty/netty-reactive-streams/1.0.5/jars/netty-reactive-streams.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-handler/4.0.34.Final/jars/netty-handler.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-codec/4.0.34.Final/jars/netty-codec.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-codec-http/4.0.34.Final/jars/netty-codec-http.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-transport-native-epoll/4.0.36.Final/jars/netty-transport-native-epoll-linux-x86_64.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-common/4.0.36.Final/jars/netty-common.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-buffer/4.0.36.Final/jars/netty-buffer.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-transport/4.0.36.Final/jars/netty-transport.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-logback_2.11/jars/play-logback_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/ch.qos.logback/logback-core/1.1.4/jars/logback-core.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/ch.qos.logback/logback-classic/1.1.4/jars/logback-classic.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-slick_2.11/jars/play-slick_2.11-2.0.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.slick/slick_2.11/bundles/slick_2.11-3.1.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.slick/slick-hikaricp_2.11/bundles/slick-hikaricp_2.11-3.1.0.jar:/Users/NoahKaplan/.ivy2/cache/com.zaxxer/HikariCP-java6/bundles/HikariCP-java6-2.3.7.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.javassist/javassist/3.19.0-GA/bundles/javassist.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.5.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-slick-evolutions_2.11/jars/play-slick-evolutions_2.11-2.0.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.11/jars/play-jdbc-evolutions_2.11-2.5.0.jar:/Users/NoahKaplan/.ivy2/cache/com.h2database/h2/jars/h2-1.4.190.jar
+Read from stdout: /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala:76: missing arguments for method apply in class index;
+Read from stdout: follow this method with `_' if you want to treat it as a partially applied function
+/Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala:76: missing arguments for method apply in class index;
+follow this method with `_' if you want to treat it as a partially applied function
+Read from stdout: Future.successful(Ok(views.html.index(errorForm)))
+        Future.successful(Ok(views.html.index(errorForm)))
+Read from stdout: ^
+                                             ^
+Read from stdout: one error found
+one error found
+Compilation failed (CompilerInterface)
+Total time: 3 s, completed Jun 9, 2016 2:54:02 PM
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/Users/NoahKaplan/Desktop/play-scala-intro/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@140b27f2, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/dal/PersonRepository.scala, /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala, /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+
+Read from stdout: Compiling 3 Scala sources to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
+Compiling 3 Scala sources to /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes...
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Running cached compiler 40b0903a, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Calling Scala compiler with arguments  (CompilerInterface):
+	-deprecation
+	-unchecked
+	-encoding
+	utf8
+	-bootclasspath
+	/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/classes:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang/scala-library/2.11.7/jars/scala-library.jar
+	-classpath
+	/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.play/twirl-api_2.11/1.1.1/jars/twirl-api_2.11.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.apache.commons/commons-lang3/3.4/jars/commons-lang3.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe/config/1.3.0/bundles/config.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.5.3.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/joda-time/joda-time/2.9.2/jars/joda-time.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.joda/joda-convert/1.8.1/jars/joda-convert.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang/scala-reflect/2.11.7/jars/scala-reflect.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-core/2.7.1/bundles/jackson-core.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-annotations/2.7.1/bundles/jackson-annotations.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.core/jackson-databind/2.7.1/bundles/jackson-databind.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.7.1/bundles/jackson-datatype-jdk8.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.7.1/bundles/jackson-datatype-jsr310.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/slf4j-api/1.7.16/jars/slf4j-api.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/jul-to-slf4j/1.7.16/jars/jul-to-slf4j.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.slf4j/jcl-over-slf4j/1.7.16/jars/jcl-over-slf4j.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-streams_2.11/jars/play-streams_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.reactivestreams/reactive-streams/1.0.0/jars/reactive-streams.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-stream_2.11/jars/akka-stream_2.11-2.4.4.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.4.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.scala-lang.modules/scala-java8-compat_2.11/0.7.0/bundles/scala-java8-compat_2.11.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe/ssl-config-akka_2.11/bundles/ssl-config-akka_2.11-0.2.1.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe/ssl-config-core_2.11/bundles/ssl-config-core_2.11-0.2.1.jar:/Users/NoahKaplan/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.4.4.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/commons-codec/commons-codec/1.10/jars/commons-codec.jar:/Users/NoahKaplan/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/NoahKaplan/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/NoahKaplan/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.google.inject/guice/4.0/jars/guice.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/javax.inject/javax.inject/1/jars/javax.inject.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/aopalliance/aopalliance/1.0/jars/aopalliance.jar:/Users/NoahKaplan/.ivy2/cache/com.google.guava/guava/bundles/guava-16.0.1.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.google.inject.extensions/guice-assistedinject/4.0/jars/guice-assistedinject.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.netty/netty-reactive-streams-http/1.0.5/jars/netty-reactive-streams-http.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/com.typesafe.netty/netty-reactive-streams/1.0.5/jars/netty-reactive-streams.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-handler/4.0.34.Final/jars/netty-handler.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-codec/4.0.34.Final/jars/netty-codec.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-codec-http/4.0.34.Final/jars/netty-codec-http.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-transport-native-epoll/4.0.36.Final/jars/netty-transport-native-epoll-linux-x86_64.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-common/4.0.36.Final/jars/netty-common.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-buffer/4.0.36.Final/jars/netty-buffer.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/io.netty/netty-transport/4.0.36.Final/jars/netty-transport.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-logback_2.11/jars/play-logback_2.11-2.5.3.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/ch.qos.logback/logback-core/1.1.4/jars/logback-core.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/ch.qos.logback/logback-classic/1.1.4/jars/logback-classic.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-slick_2.11/jars/play-slick_2.11-2.0.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.slick/slick_2.11/bundles/slick_2.11-3.1.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.slick/slick-hikaricp_2.11/bundles/slick-hikaricp_2.11-3.1.0.jar:/Users/NoahKaplan/.ivy2/cache/com.zaxxer/HikariCP-java6/bundles/HikariCP-java6-2.3.7.jar:/Users/NoahKaplan/Desktop/Medialets/activator-dist-1.3.10/repository/org.javassist/javassist/3.19.0-GA/bundles/javassist.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.5.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-slick-evolutions_2.11/jars/play-slick-evolutions_2.11-2.0.0.jar:/Users/NoahKaplan/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.11/jars/play-jdbc-evolutions_2.11-2.5.0.jar:/Users/NoahKaplan/.ivy2/cache/com.h2database/h2/jars/h2-1.4.190.jar
+Scala compilation took 6.34993425 s
+Invalidating /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala...
+Invalidating (transitively) by inheritance from /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala...
+Initial set of included nodes: Set(/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala)
+Invalidated by transitive inheritance dependency: Set(/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala)
+The /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala source file has the following regular definitions changed:
+	render, f, index, apply.
+All member reference dependencies will be considered within this context.
+The following modified names cause invalidation of /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala: Set(index, apply)
 New invalidations:
-	Set()
-Initial set of included nodes: Set()
+	Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+Initial set of included nodes: Set(/Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala)
+Including /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala by /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala
+Including /Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/routes/main/router/Routes.scala by /Users/NoahKaplan/Desktop/play-scala-intro/app/controllers/PersonController.scala
 Previously invalidated, but (transitively) depend on new invalidations:
-	Set()
+	Set(/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/twirl/main/views/html/index.template.scala)
 All newly invalidated sources after taking into account (previously) recompiled sources:Set()
 Copy resource mappings: 
 	(/Users/NoahKaplan/Desktop/play-scala-intro/conf/application.conf,/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes/application.conf)
@@ -3810,12 +4054,12 @@ Copy resource mappings:
 	(/Users/NoahKaplan/Desktop/play-scala-intro/conf/routes,/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes/routes)
 	(/Users/NoahKaplan/Desktop/play-scala-intro/conf/evolutions/default,/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes/evolutions/default)
 	(/Users/NoahKaplan/Desktop/play-scala-intro/conf/evolutions/default/1.sql,/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes/evolutions/default/1.sql)
-Total time: 8 s, completed Jun 9, 2016 12:21:28 PM
+Total time: 7 s, completed Jun 9, 2016 2:55:05 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/Users/NoahKaplan/Desktop/play-scala-intro/}root/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@60aa849a, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@6bd57b8f, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -3840,7 +4084,7 @@ Copy resource mappings:
 	(/Users/NoahKaplan/Desktop/play-scala-intro/conf/routes,/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes/routes)
 	(/Users/NoahKaplan/Desktop/play-scala-intro/conf/evolutions/default,/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes/evolutions/default)
 	(/Users/NoahKaplan/Desktop/play-scala-intro/conf/evolutions/default/1.sql,/Users/NoahKaplan/Desktop/play-scala-intro/target/scala-2.11/classes/evolutions/default/1.sql)
-Total time: 1 s, completed Jun 9, 2016 12:21:37 PM
+Total time: 1 s, completed Jun 9, 2016 2:55:11 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 Done executing sbt server engine, result Right(Exit(0))
@@ -3849,4 +4093,4 @@ Waiting for socket thread
 Waiting for request processor thread
 Waiting for command engine result
 Returning control to sbt launcher with result Exit(0)
-Closing the 94007@Noahs-MacBook-Pro.local logs at Thu Jun 09 12:23:59 EDT 2016, goodbye.
+Closing the 95730@Noahs-MacBook-Pro.local logs at Thu Jun 09 14:56:28 EDT 2016, goodbye.

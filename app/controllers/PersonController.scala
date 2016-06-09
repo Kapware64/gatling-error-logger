@@ -22,21 +22,23 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
    */
   val personForm: Form[CreatePersonForm] = Form {
     mapping(
-      "name" -> nonEmptyText,
-      "age" -> number.verifying(min(0), max(140)),
-      "desc" -> nonEmptyText
+      "Name" -> nonEmptyText,
+      "Age" -> number.verifying(min(0), max(140)),
+      "Details" -> nonEmptyText
     )(CreatePersonForm.apply)(CreatePersonForm.unapply)
   }
 
   /**
    * The index action.
    */
-  def index = Action {
-    Ok(views.html.index(personForm))
+  def index = Action.async {
+    repo.list().map { people =>
+      Ok(views.html.index(personForm)(people.length))
+    }
   }
 
   def barchart = Action {
-    Ok(views.html.barchart())
+    Ok(views.html.barchart()) //this should input personForm into barchart, and barchart should appropriately graph the form
   }
 
   def descPersons = Action.async { implicit request =>
@@ -53,7 +55,11 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
 
   def inputJSON = TODO
 
-  def graphIt = TODO
+  def graphIt = Action.async { implicit request =>
+    repo.list().map { _ =>
+      Redirect(routes.PersonController.barchart())
+    }
+  }
 
   /**
    * The add person action.
@@ -67,7 +73,9 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
       // We also wrap the result in a successful future, since this action is synchronous, but we're required to return
       // a future because the person creation function returns a future.
       errorForm => {
-        Future.successful(Ok(views.html.index(errorForm)))
+        repo.list().map { people =>
+          Ok(views.html.index(errorForm)(people.length))
+        }
       },
       // There were no errors in the from, so create the person.
       person => {

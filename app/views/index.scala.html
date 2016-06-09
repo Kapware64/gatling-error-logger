@@ -1,19 +1,20 @@
-@(person: Form[CreatePersonForm])(implicit messages: Messages)
+@(person: Form[CreatePersonForm])(len: Int)(implicit messages: Messages)
 
 @import helper._
 
 @main("Welcome to Play") {
-	<script type='text/javascript' src='@routes.Assets.versioned("javascripts/index.js")'></script>
-
 	<ul id="persons"></ul>
 
     <div align="center">
-        People Database
+        <p><b>People Database</b></p>
+        <br><br><br>
+        Number of People: @len
+        <br><br>
 
         @form(routes.PersonController.addPerson()) {
-            @inputText(person("name"))
-            @inputText(person("age"))
-            @inputText(person("desc"))
+            @inputText(person("Name"))
+            @inputText(person("Age"))
+            @inputText(person("Details"))
 
             <div class="buttons">
                 <input type="submit" value="Add Person"/>
