@@ -1,0 +1,35 @@
+@(person: Form[CreatePersonForm])(implicit messages: Messages)
+
+@import helper._
+
+@main("Welcome to Play") {
+	<script type='text/javascript' src='@routes.Assets.versioned("javascripts/index.js")'></script>
+
+	<ul id="persons"></ul>
+
+    <div align="center">
+        People Database
+
+        @form(routes.PersonController.addPerson()) {
+            @inputText(person("name"))
+            @inputText(person("age"))
+            @inputText(person("desc"))
+
+            <div class="buttons">
+                <input type="submit" value="Add Person"/>
+            </div>
+        }
+
+        @form(routes.PersonController.descPersons()) {
+            <div class="buttons">
+                <input type="submit" value="View JSON"/>
+            </div>
+        }
+
+        @form(routes.PersonController.resetAll()) {
+            <div class="buttons">
+                <input type="submit" value="RESET"/>
+            </div>
+        }
+    </div>
+}
