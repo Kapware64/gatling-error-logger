@@ -51,6 +51,10 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
     }
   }
 
+  def inputJSON = TODO
+
+  def graphIt = TODO
+
   /**
    * The add person action.
    *

@@ -5,6 +5,8 @@
 # Home page
 GET     /                           controllers.PersonController.index
 POST    /reset                      controllers.PersonController.resetAll
+POST    /graphit                    controllers.PersonController.graphIt
+POST    /inputjson                  controllers.PersonController.inputJSON
 POST    /person                     controllers.PersonController.addPerson
 GET     /persons                    controllers.PersonController.getPersons
 POST    /descpersons                controllers.PersonController.descPersons
