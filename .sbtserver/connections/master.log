@@ -1,41 +1,7 @@
-New log file opened at Fri Jun 10 11:11:14 EDT 2016 by 2693@Noahs-MacBook-Pro.local
-Taking next connection to: 50848
-New client attempting to connect on port: 50849-50848
-  Address = /10.79.69.64:50848
-This client on port 50849 has uuid b813c4ba-17e6-459f-825f-8a0c92ec8fb3 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-b813c4ba-17e6-459f-825f-8a0c92ec8fb3
-Taking next connection to: 50848
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50848
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50848
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50848
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50848
-New client attempting to connect on port: 50997-50848
-  Address = /10.79.69.64:50848
-Handshake exception on socket: 50997
-sbt.impl.ipc.HandshakeException: Unable to perform handshake
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
-	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
-	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
-Caused by: java.net.SocketException: Connection reset
-	at java.net.SocketInputStream.read(SocketInputStream.java:209)
-	at java.net.SocketInputStream.read(SocketInputStream.java:141)
-	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
-	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
-	at java.io.DataInputStream.readInt(DataInputStream.java:387)
-	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
-	... 2 more
-Taking next connection to: 50848
-New client attempting to connect on port: 50998-50848
-  Address = /10.79.69.64:50848
-This client on port 50998 has uuid 18bd1a51-0ed7-4639-ac8b-e58a202127b0 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-18bd1a51-0ed7-4639-ac8b-e58a202127b0
-Taking next connection to: 50848
+New log file opened at Fri Jun 10 11:27:49 EDT 2016 by 3256@Noahs-MacBook-Pro.local
+Taking next connection to: 51012
+New client attempting to connect on port: 51013-51012
+  Address = /10.79.69.64:51012
+This client on port 51013 has uuid 57b9fea2-3415-4afc-93a3-27bd4aca5d9b configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-57b9fea2-3415-4afc-93a3-27bd4aca5d9b
+Taking next connection to: 51012
