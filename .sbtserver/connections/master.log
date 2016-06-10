@@ -1,46 +1,7 @@
-New log file opened at Fri Jun 10 13:02:52 EDT 2016 by 1602@Noahs-MacBook-Pro.local
-Taking next connection to: 50427
-New client attempting to connect on port: 50428-50427
-  Address = /10.79.69.64:50427
-This client on port 50428 has uuid 52125d5e-9562-481e-a906-9c6df46f6385 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-52125d5e-9562-481e-a906-9c6df46f6385
-Taking next connection to: 50427
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50427
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50427
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50427
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50427
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50427
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50427
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 50427
-New client attempting to connect on port: 50546-50427
-  Address = /10.79.69.64:50427
-Handshake exception on socket: 50546
-sbt.impl.ipc.HandshakeException: Unable to perform handshake
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
-	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
-	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
-Caused by: java.io.EOFException
-	at java.io.DataInputStream.readInt(DataInputStream.java:392)
-	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
-	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
-	... 2 more
-Taking next connection to: 50427
-New client attempting to connect on port: 50547-50427
-  Address = /10.79.69.64:50427
-This client on port 50547 has uuid f79037f5-142c-499b-bc60-51d31f91b3d3 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-f79037f5-142c-499b-bc60-51d31f91b3d3
-Taking next connection to: 50427
+New log file opened at Fri Jun 10 14:47:58 EDT 2016 by 3227@Noahs-MacBook-Pro.local
+Taking next connection to: 52039
+New client attempting to connect on port: 52040-52039
+  Address = /10.79.69.64:52039
+This client on port 52040 has uuid 757493be-0daa-4953-a77a-10b528d35c92 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-757493be-0daa-4953-a77a-10b528d35c92
+Taking next connection to: 52039
