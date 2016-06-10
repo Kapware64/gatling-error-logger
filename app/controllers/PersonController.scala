@@ -8,15 +8,27 @@ import play.api.data.Forms._
 import play.api.data.validation.Constraints._
 import play.api.libs.json.Json
 import models._
+import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
+import play.api.data.Forms._
 import dal._
 
-import scala.concurrent.{ ExecutionContext, Future }
+import scala.concurrent.{ExecutionContext, Future}
 import scala.collection.mutable.Stack
-
 import javax.inject._
 
 class PersonController @Inject() (repo: PersonRepository, val messagesApi: MessagesApi)
                                  (implicit ec: ExecutionContext) extends Controller with I18nSupport{
+
+  val genderCheckConstraint: Constraint[String] = Constraint("constraints.genderscheck")({
+    str =>
+      // you have access to all the fields in the form here and can
+      // write complex logic here
+      if (str == "M" || str == "F") {
+        Valid
+      } else {
+        Invalid(Seq(ValidationError("You must enter M or F")))
+      }
+  })
 
   /**
    * The mapping for the person form.
@@ -24,8 +36,8 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
   val personForm: Form[CreatePersonForm] = Form {
     mapping(
       "Name" -> nonEmptyText,
-      "Age" -> number.verifying(min(0), max(70)),
-      "Gender" -> nonEmptyText
+      "Age" -> number.verifying(min(0), max(64)),
+      "Gender" -> text.verifying(genderCheckConstraint)
     )(CreatePersonForm.apply)(CreatePersonForm.unapply)
   }
 
