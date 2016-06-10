@@ -1,3 +1,3 @@
-# Getting started with Play (Scala)
+# People Database
 
-This project demonstrate how to create a simple CRUD application with Play.
+This project was created to demonstrate basic concepts of the Play Framework in Scala, D3.js, and Slick database query.
