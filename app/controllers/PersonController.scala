@@ -40,14 +40,23 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
 
   def barchart = Action.async {
     repo.list().map { people =>
-      //create a sequence, where elements 0-64 are number of males aged [index] and elements 65 - 129 are females
-      //    aged [index]
-      //val person = people.apply(5)
-      //val age = person.age
-      //var processedPeople = Seq[Int]
+      var ret = Seq[Int]()
 
+      for(i <- 0 to 129) {
+        val useM = (i <= 64)
+        val pplProcess = (a: Int, p: Person) => {
+          val bff = if (useM) 0 else 65
+          if (p.age == (i - bff) && ((p.gender == "M" && useM) || (p.gender == "F" && !useM))) {
+            a + 1
+          }
+          else {
+            a
+          }
+        }
+        ret = ret ++ Seq(people.foldLeft(0)(pplProcess))
+      }
 
-      Ok(views.html.barchart(Seq.range(0, 1500)))
+      Ok(views.html.barchart(ret))
     }
   }
 
