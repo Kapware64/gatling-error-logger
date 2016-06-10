@@ -47,7 +47,7 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
       //var processedPeople = Seq[Int]
 
 
-      Ok(views.html.barchart(Seq.range(0, 150)))
+      Ok(views.html.barchart(Seq.range(0, 1500)))
     }
   }
 
