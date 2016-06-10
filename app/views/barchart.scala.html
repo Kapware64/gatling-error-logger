@@ -139,11 +139,11 @@ function transitionStacked() {
 // Inspired by Lee Byron's test data generator.
 function bumpLayer(n, o) {
     var a = [], i, r = @Json.toJson(results)//[(results.toList.mkString(","))];
-    var buff = 0;
+    var bff = 0;
     if(onsecondg) {
-        buff = 65
+        bff = 65;
     }
-    for (i = 0; i < n; ++i) a[i + buff] = r[i + buff]
+    for (i = 0; i < n; ++i) a[i] = r[i+bff]
     onsecondg = true;
     return a.map(function(d, i) { return {x: i, y: Math.max(0, d)}; });
 }
