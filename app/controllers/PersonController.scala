@@ -11,6 +11,7 @@ import models._
 import dal._
 
 import scala.concurrent.{ ExecutionContext, Future }
+import scala.collection.mutable.Stack
 
 import javax.inject._
 
@@ -23,7 +24,7 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
   val personForm: Form[CreatePersonForm] = Form {
     mapping(
       "Name" -> nonEmptyText,
-      "Age" -> number.verifying(min(0), max(140)),
+      "Age" -> number.verifying(min(0), max(70)),
       "Details" -> nonEmptyText
     )(CreatePersonForm.apply)(CreatePersonForm.unapply)
   }
@@ -37,8 +38,17 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
     }
   }
 
-  def barchart = Action {
-    Ok(views.html.barchart()) //this should input personForm into barchart, and barchart should appropriately graph the form
+  def barchart = Action.async {
+    repo.list().map { people =>
+      //create a sequence, where elements 0-64 are number of males aged [index] and elements 65 - 129 are females
+      //    aged [index]
+      //val person = people.apply(5)
+      //val age = person.age
+      //var processedPeople = Seq[Int]
+
+
+      Ok(views.html.barchart(Seq.range(0, 150)))
+    }
   }
 
   def descPersons = Action.async { implicit request =>
