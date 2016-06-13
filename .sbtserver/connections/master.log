@@ -1,13 +1,7 @@
-New log file opened at Mon Jun 13 16:18:58 EDT 2016 by 29513@Noahs-MacBook-Pro.local
-Taking next connection to: 64017
-New client attempting to connect on port: 64018-64017
-  Address = /10.79.69.64:64017
-This client on port 64018 has uuid 93f9d77a-ee6b-4331-965b-0f05d0bda2d3 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-93f9d77a-ee6b-4331-965b-0f05d0bda2d3
-Taking next connection to: 64017
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 64017
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 64017
+New log file opened at Mon Jun 13 17:04:31 EDT 2016 by 30186@Noahs-MacBook-Pro.local
+Taking next connection to: 65308
+New client attempting to connect on port: 65309-65308
+  Address = /10.79.69.64:65308
+This client on port 65309 has uuid e34a8994-8707-482e-8a63-6f5c2b357660 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-e34a8994-8707-482e-8a63-6f5c2b357660
+Taking next connection to: 65308
