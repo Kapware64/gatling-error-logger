@@ -1,4 +1,3 @@
-@import scala.collection.mutable.Stack
 @import play.api.libs.json.Json
 @(results: Seq[Int])
 
@@ -47,7 +46,7 @@ var n = 2, // number of layers
         onsecondg = false
         m = 65, // number of samples per layer
         stack = d3.layout.stack(),
-        layers = stack(d3.range(n).map(function() { return bumpLayer(m, .1); })),
+        layers = stack(d3.range(n).map(function() { return bumpLayer(m); })),
         yGroupMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y; }); }),
         yStackMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); });
 
@@ -141,8 +140,7 @@ function transitionStacked() {
             .attr("width", x.rangeBand());
 }
 
-// Inspired by Lee Byron's test data generator.
-function bumpLayer(n, o) {
+function bumpLayer(n) {
     var a = [], i, r = @Json.toJson(results)
     var bff = 0;
     if(onsecondg) {

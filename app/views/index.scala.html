@@ -1,4 +1,4 @@
-@(person: Form[CreatePersonForm])(len: Int)(url: Form[CreateUrlForm])(implicit messages: Messages)
+@(person: Form[CreatePersonForm])(len: Int)(json: Form[CreateJsonForm])(implicit messages: Messages)
 
 @import helper._
 
@@ -45,7 +45,7 @@
         <br>
 
         @form(routes.PersonController.inputJSON()) {
-            @inputText(url("URL"))
+            @inputText(json("JSON"))
             <div class="buttons">
                 <input type="submit" value="Input JSON"/>
             </div>

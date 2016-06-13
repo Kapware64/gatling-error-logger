@@ -1,52 +1,48 @@
 package controllers
 
-import play.api._
 import play.api.mvc._
 import play.api.i18n._
 import play.api.data.Form
-import play.api.data.Forms._
 import play.api.data.validation.Constraints._
-import play.api.libs.json.{JsArray, JsValue, Json, Reads}
 import models._
 import play.api.data.validation.{Constraint, Invalid, Valid, ValidationError}
 import play.api.data.Forms._
 import dal._
 
-import scala.concurrent.{ExecutionContext, Future}
-import scala.collection.mutable.Stack
+import scala.concurrent.{ExecutionContext}
 import javax.inject._
 
-import scala.io.Source
-
+import play.api.libs.json._
+import play.api.libs.functional.syntax._
 
 class PersonController @Inject() (repo: PersonRepository, val messagesApi: MessagesApi)
                                  (implicit ec: ExecutionContext) extends Controller with I18nSupport{
   case class PersonEntry(id: Long, name: String, age: Int, gender: String)
 
-  implicit val personF = Json.format[PersonEntry]
+  implicit val personReads: Reads[PersonEntry] = (
+    (JsPath \ "id").read[Long] and
+      (JsPath \ "name").read[String] and
+      (JsPath \ "age").read[Int] and
+      (JsPath \ "gender").read[String]
+    )(PersonEntry.apply _)
 
   val genderCheckConstraint: Constraint[String] = Constraint("constraints.genderscheck")({
     str =>
       // you have access to all the fields in the form here and can
       // write complex logic here
       if (str == "M" || str == "F") {
-
         Valid
       } else {
         Invalid(Seq(ValidationError("You must enter M or F")))
       }
   })
 
-  val validUrl: Constraint[String] = Constraint("constraints.url") { url =>
+  val validJSON: Constraint[String] = Constraint("constraints.json") { inputjson =>
     try {
-      val urlJ = new java.net.URL(url) // Can throw `MalformedURLException`.
-      val content = Source.fromInputStream(urlJ.openStream).getLines.mkString("\n")
-      Json.parse(content) match {
-        case JsArray(Seq(t)) => Valid
-        case _ => Invalid(Seq(ValidationError("URL didn't give valid JSON")))
-      }
+      val _ = Json.parse(inputjson).as[List[PersonEntry]]
+      Valid
     } catch {
-      case e: Throwable => Invalid(Seq(ValidationError("URL didn't give valid JSON")))
+      case e: Exception => Invalid(Seq(ValidationError("Input is not in correct JSON format")))
     }
   }
 
@@ -61,10 +57,10 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
     )(CreatePersonForm.apply)(CreatePersonForm.unapply)
   }
 
-  val urlForm: Form[CreateUrlForm] = Form {
+  val jsonForm: Form[CreateJsonForm] = Form {
     mapping (
-      "URL" -> text.verifying(validUrl)
-    )(CreateUrlForm.apply)(CreateUrlForm.unapply)
+      "JSON" -> text.verifying(validJSON)
+    )(CreateJsonForm.apply)(CreateJsonForm.unapply)
   }
 
   /**
@@ -72,7 +68,7 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
    */
   def index = Action.async {
     repo.list().map { people =>
-      Ok(views.html.index(personForm)(people.length)(urlForm))
+      Ok(views.html.index(personForm)(people.length)(jsonForm))
     }
   }
 
@@ -110,15 +106,23 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
     }
   }
 
+  def constPeople(rawppl: List[PersonEntry]): List[Person] = {
+    var ret = List[Person]()
+    for (rawperson <- rawppl) {
+      ret =  Person(1, rawperson.name, rawperson.age, rawperson.gender) :: ret
+    }
+    ret
+  }
+
   def inputJSON = Action.async { implicit request =>
-    urlForm.bindFromRequest.fold(
+    jsonForm.bindFromRequest.fold(
       errorForm => {
         repo.list().map { people =>
           Ok(views.html.index(personForm)(people.length)(errorForm))
         }
       },
-      url => {
-        repo.create(url.url, 10, url.url).map { _ =>
+      JSON => {
+        repo.createmult(constPeople(Json.parse(JSON.json).as[List[PersonEntry]])).map { _ =>
           Redirect(routes.PersonController.index)
         }
       }
@@ -144,7 +148,7 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
       // a future because the person creation function returns a future.
       errorForm => {
         repo.list().map { people =>
-          Ok(views.html.index(errorForm)(people.length)(urlForm))
+          Ok(views.html.index(errorForm)(people.length)(jsonForm))
         }
       },
       // There were no errors in the from, so create the person.
@@ -176,4 +180,4 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
  */
 case class CreatePersonForm(name: String, age: Int, gender: String)
 
-case class CreateUrlForm(url: String)
+case class CreateJsonForm(json: String)
