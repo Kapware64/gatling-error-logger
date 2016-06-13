@@ -10,45 +10,57 @@
             <b>People Database</b>
         </div>
 
-        <br>
-        Number of People: @len
+        Population: @len
         <br><br>
-
-        @form(routes.PersonController.addPerson()) {
-            @inputText(person("Name"))
-            @inputText(person("Age"))
-            @inputText(person("Gender"))
-
-            <div class="buttons">
-                <input type="submit" value="Add Person"/>
-            </div>
-        }
-
-        @form(routes.PersonController.graphIt()) {
-            <div class="buttons">
-                <input type="submit" value="Graph It"/>
-            </div>
-        }
-
-        @form(routes.PersonController.descPersons()) {
-            <div class="buttons">
-                <input type="submit" value="View JSON"/>
-            </div>
-        }
-
-        @form(routes.PersonController.resetAll()) {
-            <div class="buttons">
-                <input type="submit" value="CLEAR ALL"/>
-            </div>
-        }
-
-        <br>
-
-        @form(routes.PersonController.inputJSON()) {
-            @inputText(json("JSON"))
-            <div class="buttons">
-                <input type="submit" value="Input JSON"/>
-            </div>
-        }
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div align="center">
+                <div class="one-third column">
+                    @form(routes.PersonController.addPerson()) {
+                        @inputText(person("Name"))
+                        @inputText(person("Age"))
+                        @inputText(person("Gender"))
+
+                        <div class="buttons">
+                            <input type="submit" value="Add Person"/>
+                        </div>
+                }
+                </div>
+
+                <div class="four columns">
+                    @form(routes.PersonController.inputJSON()) {
+                        @inputText(json("JSON"))
+                        <div class="buttons">
+                            <input type="submit" value="Input JSON"/>
+                        </div>
+                    }
+                </div>
+
+                <div class="one-third column">
+                    <br><br>
+                    @form(routes.PersonController.graphIt()) {
+                        <div class="buttons">
+                            <input type="submit" value="Graph It"/>
+                        </div>
+                    }
+
+                    @form(routes.PersonController.descPersons()) {
+                        <div class="buttons">
+                            <input type="submit" value="View JSON"/>
+                        </div>
+                    }
+
+                    @form(routes.PersonController.resetAll()) {
+                        <div class="buttons">
+                            <input type="submit" value="CLEAR ALL"/>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
 }
