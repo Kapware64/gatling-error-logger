@@ -72,28 +72,6 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
     }
   }
 
-  def barchart = Action.async {
-    repo.list().map { people =>
-      var ret = Seq[Int]()
-
-      for(i <- 0 to 129) {
-        val useM = (i <= 64)
-        val pplProcess = (a: Int, p: Person) => {
-          val bff = if (useM) 0 else 65
-          if (p.age == (i - bff) && ((p.gender == "M" && useM) || (p.gender == "F" && !useM))) {
-            a + 1
-          }
-          else {
-            a
-          }
-        }
-        ret = ret ++ Seq(people.foldLeft(0)(pplProcess))
-      }
-
-      Ok(views.html.barchart(ret))
-    }
-  }
-
   def descPersons = Action.async { implicit request =>
     repo.list().map { _ =>
       Redirect(routes.PersonController.getPersons())
@@ -130,8 +108,24 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
   }
 
   def graphIt = Action.async { implicit request =>
-    repo.list().map { _ =>
-      Redirect(routes.PersonController.barchart())
+    repo.list().map { people =>
+      var ret = Seq[Int]()
+
+      for(i <- 0 to 129) {
+        val useM = (i <= 64)
+        val pplProcess = (a: Int, p: Person) => {
+          val bff = if (useM) 0 else 65
+          if (p.age == (i - bff) && ((p.gender == "M" && useM) || (p.gender == "F" && !useM))) {
+            a + 1
+          }
+          else {
+            a
+          }
+        }
+        ret = ret ++ Seq(people.foldLeft(0)(pplProcess))
+      }
+
+      Ok(views.html.barchart(ret))
     }
   }
 
