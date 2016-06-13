@@ -1,4 +1,4 @@
-@(person: Form[CreatePersonForm])(len: Int)(implicit messages: Messages)
+@(person: Form[CreatePersonForm])(len: Int)(url: Form[CreateUrlForm])(implicit messages: Messages)
 
 @import helper._
 
@@ -6,8 +6,11 @@
 	<ul id="persons"></ul>
 
     <div align="center">
-        <p><b>People Database</b></p>
-        <br><br><br>
+        <div class="title">
+            <b>People Database</b>
+        </div>
+
+        <br>
         Number of People: @len
         <br><br>
 
@@ -33,15 +36,18 @@
             </div>
         }
 
-        @form(routes.PersonController.inputJSON()) {
-            <div class="buttons">
-                <input type="submit" value="Input JSON"/>
-            </div>
-        }
-
         @form(routes.PersonController.resetAll()) {
             <div class="buttons">
                 <input type="submit" value="CLEAR ALL"/>
+            </div>
+        }
+
+        <br>
+
+        @form(routes.PersonController.inputJSON()) {
+            @inputText(url("URL"))
+            <div class="buttons">
+                <input type="submit" value="Input JSON"/>
             </div>
         }
     </div>
