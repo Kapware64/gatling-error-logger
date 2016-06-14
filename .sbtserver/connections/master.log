@@ -1,7 +1,7 @@
-New log file opened at Mon Jun 13 17:04:31 EDT 2016 by 30186@Noahs-MacBook-Pro.local
-Taking next connection to: 65308
-New client attempting to connect on port: 65309-65308
-  Address = /10.79.69.64:65308
-This client on port 65309 has uuid e34a8994-8707-482e-8a63-6f5c2b357660 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-e34a8994-8707-482e-8a63-6f5c2b357660
-Taking next connection to: 65308
+New log file opened at Tue Jun 14 10:38:05 EDT 2016 by 32653@Noahs-MacBook-Pro.local
+Taking next connection to: 52775
+New client attempting to connect on port: 52776-52775
+  Address = /10.79.69.64:52775
+This client on port 52776 has uuid 3093fff9-0468-4dd2-86ae-c4427e99dfaa configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-3093fff9-0468-4dd2-86ae-c4427e99dfaa
+Taking next connection to: 52775
