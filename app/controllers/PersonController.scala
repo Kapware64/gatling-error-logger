@@ -109,23 +109,13 @@ class PersonController @Inject() (repo: PersonRepository, val messagesApi: Messa
 
   def graphIt = Action.async { implicit request =>
     repo.list().map { people =>
-      var ret = Seq[Int]()
-
-      for(i <- 0 to 129) {
-        val useM = (i <= 64)
-        val pplProcess = (a: Int, p: Person) => {
-          val bff = if (useM) 0 else 65
-          if (p.age == (i - bff) && ((p.gender == "M" && useM) || (p.gender == "F" && !useM))) {
-            a + 1
-          }
-          else {
-            a
-          }
-        }
-        ret = ret ++ Seq(people.foldLeft(0)(pplProcess))
+      var retmap:Map[Int, Int] = Map().withDefaultValue(0)
+      for ((elem, i) <- people zip List.range(0, 129)) {
+        val adjage = if (elem.gender == "M") {elem.age} else {elem.age + 65}
+        retmap += (adjage -> (retmap(adjage) + 1))
       }
 
-      Ok(views.html.barchart(ret))
+      Ok(views.html.barchart((0 until 129).map { i => retmap(i) }))
     }
   }
 
