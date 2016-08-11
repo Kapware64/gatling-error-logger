@@ -25,6 +25,7 @@ Run the project
 Logging Errors
 --------------
 Errors are logged via POST requests to "[URL you are running the server on]/error" with request bodies containing json in this format:
+```json
   {
       "key": "[YOUR ERROR LOGGING SERVER'S ADMIN KEY]",
       "content": [{
@@ -35,4 +36,5 @@ Errors are logged via POST requests to "[URL you are running the server on]/erro
           "date": "8-11-2016"
       }]
   }
+```
 You can find a Gatling simulation which automatically finds the latest recorded simulation log, converts it to this format, and makes the POST request here: https://github.com/Kapware64/stress-tester/blob/master/src/test/scala/com/medialets/LogErrors.scala.
