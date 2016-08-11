@@ -1,7 +1,6 @@
 $ ->
-  $.get "/persons", (persons) ->
-    $.each persons, (index, person) ->
-      name = $("<div>").addClass("Name").text person.name
-      age = $("<div>").addClass("Age").text person.age
-      gender = $("<div>").addClass("Gender").text person.gender
-      $("#persons").append $("<li>").append(name).append(age)
+  $.get "/errors", (errors) ->
+    $.each errors, (index, error) ->
+      name = $("<div>").addClass("Name").text error.name
+      date = $("<div>").addClass("Date").text error.date
+      $("#errors").append $("<li>").append(name).append(date)

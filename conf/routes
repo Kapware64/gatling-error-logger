@@ -3,13 +3,14 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.PersonController.index
-POST    /reset                      controllers.PersonController.resetAll
-POST    /graphit                    controllers.PersonController.graphIt
-POST    /inputjson                  controllers.PersonController.inputJSON
-POST    /person                     controllers.PersonController.addPerson
-GET     /persons                    controllers.PersonController.getPersons
-POST    /descpersons                controllers.PersonController.descPersons
+GET     /                           controllers.ErrorController.index
+POST    /reset                      controllers.ErrorController.resetAll
+POST    /graphit                    controllers.ErrorController.graphIt
+POST    /inputjson                  controllers.ErrorController.inputJSON
+POST    /error                      controllers.ErrorController.addError
+GET     /errors                     controllers.ErrorController.getErrors
+POST    /descerrors                 controllers.ErrorController.descErrors
+POST    /admin                      controllers.ErrorController.reqAdmin
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
