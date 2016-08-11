@@ -1,10 +1,25 @@
-New log file opened at Thu Aug 11 14:51:32 EDT 2016 by 8694@Noahs-MacBook-Pro.local
-Taking next connection to: 60666
-New client attempting to connect on port: 60667-60666
-  Address = /10.79.83.66:60666
-This client on port 60667 has uuid b3205306-b493-4cc0-a4e1-f1bc80a8b8e8 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-b3205306-b493-4cc0-a4e1-f1bc80a8b8e8
-Taking next connection to: 60666
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 60666
+New log file opened at Thu Aug 11 15:43:45 EDT 2016 by 9414@Noahs-MacBook-Pro.local
+Taking next connection to: 61261
+New client attempting to connect on port: 61262-61261
+  Address = /10.79.83.66:61261
+This client on port 61262 has uuid 7c10a566-2c2c-4485-bfa2-d91ab59e3450 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-7c10a566-2c2c-4485-bfa2-d91ab59e3450
+Taking next connection to: 61261
+New client attempting to connect on port: 61295-61261
+  Address = /10.79.83.66:61261
+Handshake exception on socket: 61295
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 61261
+New client attempting to connect on port: 61296-61261
+  Address = /10.79.83.66:61261
+This client on port 61296 has uuid e6318174-cb0d-4b84-8029-0f58eb48cd94 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-e6318174-cb0d-4b84-8029-0f58eb48cd94
+Taking next connection to: 61261
