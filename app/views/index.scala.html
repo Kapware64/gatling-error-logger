@@ -1,63 +1,58 @@
-@(person: Form[CreatePersonForm])(len: Int)(json: Form[CreateJsonForm])(implicit messages: Messages)
+@(isAdmin: Boolean)(len: Int)(json: Form[CreateJsonForm])(password: Form[CreatePasswordForm])(implicit messages: Messages)
 
 @import helper._
 
-@main("People Database") {
-	<ul id="persons"></ul>
+@main("Errors Logger") {
+    <ul id="errors"></ul>
 
     <div align="center">
         <div class="title">
-            <b>People Database</b>
+            <b>Errors Database</b>
         </div>
 
-        Population: @len
+        Logged Errors: @len
         <br><br>
     </div>
 
     <div class="container">
         <div class="row">
             <div align="center">
-                <div class="one-third column">
-                    @form(routes.PersonController.addPerson()) {
-                        @inputText(person("Name"))
-                        @inputText(person("Age"))
-                        @inputText(person("Gender"))
-
-                        <div class="buttons">
-                            <input type="submit" value="Add Person"/>
-                        </div>
+                <br><br>
+                @form(routes.ErrorController.graphIt()) {
+                    <div class="buttons">
+                        <input type="submit" value="Graph It"/>
+                    </div>
                 }
-                </div>
 
-                <div class="four columns">
-                    @form(routes.PersonController.inputJSON()) {
+                @form(routes.ErrorController.descErrors()) {
+                    <div class="buttons">
+                        <input type="submit" value="View JSON"/>
+                    </div>
+                }
+
+                <br>
+
+                @if(isAdmin) {
+                    @form(routes.ErrorController.resetAll()) {
+                        <div class="buttons">
+                            <input type="submit" value="CLEAR ALL"/>
+                        </div>
+                    }
+                    @form(routes.ErrorController.inputJSON()) {
                         @inputText(json("JSON"))
                         <div class="buttons">
                             <input type="submit" value="Input JSON"/>
                         </div>
                     }
-                </div>
-
-                <div class="one-third column">
-                    <br><br>
-                    @form(routes.PersonController.graphIt()) {
+                }
+                @if(!isAdmin) {
+                    @form(routes.ErrorController.reqAdmin()) {
+                        @inputText(password("Password"))
                         <div class="buttons">
-                            <input type="submit" value="Graph It"/>
+                            <input type="submit" value="Admin"/>
                         </div>
                     }
-
-                    @form(routes.PersonController.descPersons()) {
-                        <div class="buttons">
-                            <input type="submit" value="View JSON"/>
-                        </div>
-                    }
-
-                    @form(routes.PersonController.resetAll()) {
-                        <div class="buttons">
-                            <input type="submit" value="CLEAR ALL"/>
-                        </div>
-                    }
-                </div>
+                }
             </div>
         </div>
     </div>
