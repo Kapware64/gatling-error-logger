@@ -6,3 +6,9 @@ target
 /.project
 /.settings
 /RUNNING_PID
+master.log
+previous.log
+application.log
+projectFilesBackup
+.sbtserver
+libexec
