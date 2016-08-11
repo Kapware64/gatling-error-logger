@@ -102,10 +102,11 @@ class ErrorController @Inject() (repo: ErrorRepository, val messagesApi: Message
         }
       },
       JSON => {
-        repo.createmult(constPeople(Json.parse(JSON.json).as[List[ErrorEntry]])).map { errorsLenOpt =>
-          val Some(errorsLen) = errorsLenOpt
-          Ok(views.html.index(true)(errorsLen)(jsonForm)(passwordForm))
-        }
+        repo.createmult(constPeople(Json.parse(JSON.json).as[List[ErrorEntry]])).map { _ =>
+          repo.list().map { errors =>
+            Ok(views.html.index(true)(errors.length)(jsonForm)(passwordForm))
+          }
+        }.flatMap(identity)
       }
     )
   }
