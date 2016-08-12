@@ -19,8 +19,8 @@ import play.api.libs.json._
 import play.api.libs.functional.syntax._
 import com.typesafe.config.ConfigFactory
 import org.json4s.DefaultFormats
-import org.json4s.jackson.JsonMethods._
 import org.json4s._
+import org.json4s.jackson.Serialization
 
 class ErrorController @Inject() (repo: ErrorRepository, val messagesApi: MessagesApi)
                                 (implicit ec: ExecutionContext) extends Controller with I18nSupport{
@@ -154,11 +154,7 @@ class ErrorController @Inject() (repo: ErrorRepository, val messagesApi: Message
         JObject(List(JField("name", JString("Failed Requests")), JField("children", JArray(jsonChildren))))
       }
 
-      val writer = new PrintWriter(new File("public/errors.json"))
-      writer.write(pretty(org.json4s.jackson.JsonMethods.render(procErrors(errors))))
-      writer.close()
-
-      Ok(views.html.barchart())
+      Ok(views.html.barchart(Serialization.write(procErrors(errors))))
     }
   }
 

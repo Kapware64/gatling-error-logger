@@ -1,3 +1,5 @@
+@(errorJson: String)
+
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
@@ -50,12 +52,14 @@
                 .attr("class", "y axis")
                 .append("line")
                 .attr("y1", "100%");
-        d3.json("/assets/errors.json", function(error, root) {
-            if (error) throw error;
-            partition.nodes(root);
-            x.domain([0, root.value]).nice();
-            down(root, 0);
-        });
+
+        var rawJson = @Html(errorJson)
+        root = rawJson
+
+        partition.nodes(root);
+        x.domain([0, root.value]).nice();
+        down(root, 0);
+
         function down(d, i) {
             if (!d.children || this.__transition__) return;
             var end = duration + d.children.length * delay;
