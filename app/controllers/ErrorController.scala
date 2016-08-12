@@ -1,5 +1,9 @@
 package controllers
 
+import java.io.{File, PrintWriter}
+import java.text.SimpleDateFormat
+import java.util.Date
+
 import play.api.mvc._
 import play.api.i18n._
 import play.api.data.Form
@@ -13,23 +17,29 @@ import javax.inject._
 
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
-
 import com.typesafe.config.ConfigFactory
+import org.json4s.DefaultFormats
+import org.json4s.jackson.JsonMethods._
+import org.json4s._
 
 class ErrorController @Inject() (repo: ErrorRepository, val messagesApi: MessagesApi)
                                 (implicit ec: ExecutionContext) extends Controller with I18nSupport{
-  case class ErrorEntry(id: Long, name: String, date: String)
+  case class ErrorList(list: List[Error])
+  case class ProcError(name: String, date: Date)
+  case class ErrorDates(name: String, dates: List[(Date, Int)])
+
+  implicit val formats = DefaultFormats
   val ADMIN_KEY = ConfigFactory.load()getString("keys.adminKey")
 
-  implicit val errorReads: Reads[ErrorEntry] = (
+  implicit val errorReads: Reads[Error] = (
     (JsPath \ "id").read[Long] and
       (JsPath \ "name").read[String] and
       (JsPath \ "date").read[String]
-    )(ErrorEntry.apply _)
+    )(Error.apply _)
 
   val validJSON: Constraint[String] = Constraint("constraints.json") { inputjson =>
     try {
-      val _ = Json.parse(inputjson).as[List[ErrorEntry]]
+      val _ = Json.parse(inputjson).as[List[Error]]
       Valid
     } catch {
       case e: Exception => Invalid(Seq(ValidationError("Input is not in correct JSON format")))
@@ -86,7 +96,7 @@ class ErrorController @Inject() (repo: ErrorRepository, val messagesApi: Message
     }
   }
 
-  def constPeople(rawErrors: List[ErrorEntry]): List[Error] = {
+  def constPeople(rawErrors: List[Error]): List[Error] = {
     var ret = List[Error]()
     for (rawError <- rawErrors) {
       ret = Error(1, rawError.name, rawError.date) :: ret
@@ -102,7 +112,7 @@ class ErrorController @Inject() (repo: ErrorRepository, val messagesApi: Message
         }
       },
       JSON => {
-        repo.createmult(constPeople(Json.parse(JSON.json).as[List[ErrorEntry]])).map { _ =>
+        repo.createmult(constPeople(Json.parse(JSON.json).as[List[Error]])).map { _ =>
           repo.list().map { errors =>
             Ok(views.html.index(true)(errors.length)(jsonForm)(passwordForm))
           }
@@ -113,7 +123,42 @@ class ErrorController @Inject() (repo: ErrorRepository, val messagesApi: Message
 
   def graphIt = Action.async { implicit request =>
     repo.list().map { errors =>
-      Ok(views.html.barchart((0 until 129).map { i => 0 }))
+      def getErrorJson(acc: JValue, rangeAcc: List[JObject], l: List[(ProcError, Int)]): JValue = {
+        def addRange(acc: JValue, range: List[JObject]): JValue = {
+          val JString(startDate) = range.head \ "name"
+          val JString(endDate) = range.last \ "name"
+          val childToAdd = JObject(List(JField("name", JString(startDate.toString + " to " + endDate.toString)),
+            JField("children", JArray(range))))
+          val JArray(children) = acc \ "children"
+          acc transformField {
+            case JField("children", _) => ("children", JArray(childToAdd :: children))
+          }
+        }
+
+        if(l.isEmpty) addRange(acc, rangeAcc)
+        else {
+          if(rangeAcc.length >= 10) getErrorJson(addRange(acc, rangeAcc), List[JObject](), l)
+          else getErrorJson(acc, JObject(List(JField("name", JString(l.head._1.date.toString)), JField("size", JInt(l.head._2)))) :: rangeAcc, l.tail)
+        }
+      }
+
+      def procErrors(errors: Seq[Error]): JObject = {
+        val nameMatchedErrors = errors.groupBy(_.name).values.toSeq
+        val jsonChildren = nameMatchedErrors.foldLeft(List[JValue]()) { (aL, eL) =>
+          val dateCounts = eL.foldLeft(List[ProcError]()) { (a, e) =>
+            val procDate = new SimpleDateFormat("MM-dd-yyyy").parse(e.date)
+            a ++ List(ProcError(e.name, procDate))
+          }.sortBy(_.date.getTime).groupBy(identity).mapValues(_.size).toList
+          getErrorJson(JObject(List(JField("name", JString(eL.head.name)), JField("children", JArray(List[JObject]())))), List[JObject](), dateCounts) :: aL
+        }
+        JObject(List(JField("name", JString("Failed Requests")), JField("children", JArray(jsonChildren))))
+      }
+
+      val writer = new PrintWriter(new File("public/errors.json"))
+      writer.write(pretty(org.json4s.jackson.JsonMethods.render(procErrors(errors))))
+      writer.close()
+
+      Ok(views.html.barchart())
     }
   }
 
