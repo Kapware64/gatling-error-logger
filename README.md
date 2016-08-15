@@ -19,7 +19,7 @@ In application.conf (location in the conf folder), change the "adminKey" field t
 
 Run the project
 ---------------
-* You can run this project locally as a Play 2 App. Here are JVM options for doing this when running on http://localhost:9000: "-Xms512M -Xmx4096M -Xss20M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M)." In IntelliJ, these configurations are done in the "Run/Debug Configurations" menu.
+* You can run this project locally as a Play 2 App. Here are JVM options for doing this when running on http://localhost:9000: "-Xms512M -Xmx4096M -Xss20M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M." In IntelliJ, these configurations are done in the "Run/Debug Configurations" menu.
 * To deploy this application, see https://www.playframework.com/documentation/2.5.x/Production.
 
 Logging Errors
