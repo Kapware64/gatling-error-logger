@@ -1,7 +1,7 @@
 Gatling Error Logger
 =========================
 
-This is a Play Framework server that logs failed requests from Gatling simulations and graphs them by date. It utilizes D3.js to graph, Skeleton (http://getskeleton.com/) for the front-end appearance, and Slick for the database.
+This is a Play Framework server that logs failed requests from Gatling simulations and graphs them by date (with entries sorted by number of error occurrences). It utilizes D3.js to graph, Skeleton (http://getskeleton.com/) for the front-end appearance, and Slick for the database.
 
 Quickstart Guide
 =========================
