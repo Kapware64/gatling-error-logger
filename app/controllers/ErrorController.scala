@@ -123,10 +123,11 @@ class ErrorController @Inject() (repo: ErrorRepository, val messagesApi: Message
 
   def graphIt = Action.async { implicit request =>
     repo.list().map { errors =>
+      val dateFormat = new SimpleDateFormat("M-d-y")
       def getErrorJson(acc: JValue, rangeAcc: List[JObject], l: List[(ProcError, Int)]): JValue = {
         def addRange(acc: JValue, range: List[JObject]): JValue = {
-          val JString(startDate) = range.head \ "name"
-          val JString(endDate) = range.last \ "name"
+          val JString(startDate) = range.last \ "name"
+          val JString(endDate) = range.head \ "name"
           val childToAdd = JObject(List(JField("name", JString(startDate.toString + " to " + endDate.toString)),
             JField("children", JArray(range))))
           val JArray(children) = acc \ "children"
@@ -138,7 +139,7 @@ class ErrorController @Inject() (repo: ErrorRepository, val messagesApi: Message
         if(l.isEmpty) addRange(acc, rangeAcc)
         else {
           if(rangeAcc.length >= 10) getErrorJson(addRange(acc, rangeAcc), List[JObject](), l)
-          else getErrorJson(acc, JObject(List(JField("name", JString(l.head._1.date.toString)), JField("size", JInt(l.head._2)))) :: rangeAcc, l.tail)
+          else getErrorJson(acc, JObject(List(JField("name", JString(dateFormat.format(l.head._1.date))), JField("size", JInt(l.head._2)))) :: rangeAcc, l.tail)
         }
       }
 
@@ -146,9 +147,9 @@ class ErrorController @Inject() (repo: ErrorRepository, val messagesApi: Message
         val nameMatchedErrors = errors.groupBy(_.name).values.toSeq
         val jsonChildren = nameMatchedErrors.foldLeft(List[JValue]()) { (aL, eL) =>
           val dateCounts = eL.foldLeft(List[ProcError]()) { (a, e) =>
-            val procDate = new SimpleDateFormat("MM-dd-yyyy").parse(e.date)
+            val procDate = dateFormat.parse(e.date)
             a ++ List(ProcError(e.name, procDate))
-          }.sortBy(_.date.getTime).groupBy(identity).mapValues(_.size).toList
+          }.groupBy(identity).mapValues(_.size).toList.sortBy(_._1.date.getTime)
           getErrorJson(JObject(List(JField("name", JString(eL.head.name)), JField("children", JArray(List[JObject]())))), List[JObject](), dateCounts) :: aL
         }
         JObject(List(JField("name", JString("Failed Requests")), JField("children", JArray(jsonChildren))))
